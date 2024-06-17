@@ -4,21 +4,21 @@ services:
     ports:
     - 8081:8080
     volumes:
-    - ./netbox:/etc/netbox/config:z,ro
-    - ./netbox-media-files:/opt/netbox/netbox/media:z,rw
-    - ./netbox-reports-files:/opt/netbox/netbox/reports:z,rw
-    - ./netbox-scripts-files:/opt/netbox/netbox/scripts:z,rw
+    - /data/netbox/netbox:/etc/netbox/config:z,ro
+    - /data/netbox/netbox-media-files:/opt/netbox/netbox/media:z,rw
+    - /data/netbox/netbox-reports-files:/opt/netbox/netbox/reports:z,rw
+    - /data/netbox/netbox-scripts-files:/opt/netbox/netbox/scripts:z,rw
     healthcheck:
       retries: 15
   netbox-worker:
     volumes:
-    - ./netbox:/etc/netbox/config:z,ro
-    - ./netbox-media-files:/opt/netbox/netbox/media:z,rw
-    - ./netbox-reports-files:/opt/netbox/netbox/reports:z,rw
-    - ./netbox-scripts-files:/opt/netbox/netbox/scripts:z,rw
+    - /data/netbox/netbox:/etc/netbox/config:z,ro
+    - /data/netbox/netbox-media-files:/opt/netbox/netbox/media:z,rw
+    - /data/netbox/netbox-reports-files:/opt/netbox/netbox/reports:z,rw
+    - /data/netbox/netbox-scripts-files:/opt/netbox/netbox/scripts:z,rw
   netbox-housekeeping:
     volumes:
-    - ./netbox:/etc/netbox/config:z,ro
-    - ./netbox-media-files:/opt/netbox/netbox/media:z,rw
-    - ./netbox-reports-files:/opt/netbox/netbox/reports:z,rw
-    - ./netbox-scripts-files:/opt/netbox/netbox/scripts:z,rw
+    - /data/netbox/netbox:/etc/netbox/config:z,ro
+    - /data/netbox/netbox-media-files:/opt/netbox/netbox/media:z,rw
+    - /data/netbox/netbox-reports-files:/opt/netbox/netbox/reports:z,rw
+    - /data/netbox/netbox-scripts-files:/opt/netbox/netbox/scripts:z,rw
